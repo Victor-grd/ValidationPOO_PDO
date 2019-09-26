@@ -110,39 +110,4 @@ abstract  class Character
             $this->strength = $strength;
         }
     // Methodes
-        public function attaque($cible)
-        {
-            $strength = $this->strength;
-            $random = rand(0,5);
-            if ($random == 0) {
-                echo $this->name . " a raté son coup <br>";
-            } else {
-                $strength += $random;
-                echo '<span>' . $this->name . ' attaque ' . $cible->name . '</span>';
-                echo '<span>' . $cible->health . ' - ' . $strength . '</span>';
-                $cible->health -= $strength;
-                echo '<span>' . $cible->name . ' : ' . $cible->health . 'pv </span>';
-            }
-        }
-
-        public function fight($cible)
-        {
-            $this->attaque($cible);
-            echo '<hr>';
-            if ($cible->health <= 0) {
-                echo '<span>' . $this->name . ' a gagné </span>';
-                // echo '<span class="winner"> Winner is ' . $this->name . '</span>';
-
-                exit;
-            }
-            $cible->attaque($this);
-            echo '<hr>';
-            if ($this->health <= 0) {
-                echo '<span>' . $cible->name . ' a gagné </span>';
-                // echo '<span class="winner"> Winner is ' . $cible->name . '</span>';
-                exit;
-            } else {
-                $this->fight($cible);
-            }
-    }
 }
