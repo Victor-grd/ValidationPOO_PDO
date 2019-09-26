@@ -1,0 +1,48 @@
+body {
+    height: 100vh;
+    padding: 2em;
+    background: linear-gradient(#7c0e34, #07051b);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.background {
+    /* filter: grayscale(70%); */
+    position: absolute;
+    top: 0;
+    display: flex;
+    width: 100%;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    z-index: -1;
+
+}
+
+.content {
+    height: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.characters{
+    height: 40%;
+    width: 100%;
+}
+
+.card-image {
+    height: 200px;
+    width: auto;
+}
+.card-infos {
+    display: flex;
+}
+.card-stats {
+    margin-left: 25px;
+    text-shadow: 0 0 3px black;
+}
+
+.form {
+    width: 42em;
+}
+
