@@ -1,16 +1,9 @@
-<?php // ZONE DE TEST
-
-// $class = "MyClass";
-// $args = "blablabla";
-// $obj = new $class($args);
-
+<?php
 
 $allCharacters = array();
 foreach (Character::getCharacters() as $character) {
   $perso_name = $character['name'];
   $role_name = $character['role'];
-
-  // var_dump($character['role']);die;
 
   $$perso_name = new $role_name($character['role'], $character['character_id'], $character['name'],$character['role_id'],$character['health'],$character['strength'], $character['image']);
   array_push($allCharacters, $perso_name);
@@ -26,14 +19,10 @@ foreach (Character::getCharacters() as $character) {
             <div class="card border-dark mb-3 swiper-slide" style="max-width: 20rem;">
               <div class="card-header">
                 <?=$$character->getRoleName()?>
-
                 <form method="post" action="./CRUD/deleteCharacter.php">
                   <input type="hidden" name="id" value="<?=$$character->getId()?>">
                   <button type="submit" class="close">&times;</button>
                 </form>
-                <!-- <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="">
-                </div> -->
 
               </div>
               <div class="card-body">
